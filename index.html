@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruixiang Jiang</title>
-	<link rel="icon" href="icon.jpg" type="image/jpeg">
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            padding-top: 50px; /* 增加顶部内边距 */
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* 修改为flex-start以确保内容在顶部对齐 */
             height: 100vh;
+            box-sizing: border-box;
         }
         .container {
             background: white;
@@ -23,6 +25,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 100%;
+            box-sizing: border-box;
         }
         h1 {
             text-align: center;
@@ -41,7 +44,7 @@
 <body>
     <div class="container">
         <h1>Ruixiang Jiang</h1>
-        <p style="margin-left: 240px;">Interests: security system, software engineering</p>
+        <p style="text-align: center;">Interests: security system, software engineering</p>
         <div class="education">
             <h2>Education</h2>
             <p><strong>Undergraduate:</strong> Computer Science & Technology, SUSTech</p>
