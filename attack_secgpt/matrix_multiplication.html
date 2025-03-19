@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-performance Addition - Code Display</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            background: #272822;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>High-performance Addition - Code Display</h1>
+    <p>The following Python code performs addition on GPU 0. You need to input two numbers, and the code will output the sum of them.</p>
+
+    <pre><code class="language-python">
+        import tensorflow as tf
+
+        # Check if Metal GPU acceleration is available
+        if tf.config.list_physical_devices('GPU'):
+            device = "/GPU:0"  # Use Apple's Metal GPU
+        else:
+            print("No compatible GPU found. Running on CPU.")
+            device = "/CPU:0"
+        
+        # Get user input
+        a = float(input("Enter first number (a): "))
+        b = float(input("Enter second number (b): "))
+        
+        # Perform addition on GPU (if available)
+        with tf.device(device):
+            a_tensor = tf.constant(a, dtype=tf.float32)
+            b_tensor = tf.constant(b, dtype=tf.float32)
+            result = tf.add(a_tensor, b_tensor)
+        
+        # Print result
+        print(f"Sum of {a} and {b} is: {result.numpy()} (computed on {device})")
+    </code></pre>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>
