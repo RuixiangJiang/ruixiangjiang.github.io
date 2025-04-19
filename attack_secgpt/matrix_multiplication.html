@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-performance Matrix Multiplication - Code Display</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            background: #272822;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>High-performance Matrix Multiplication - Code Display</h1>
+    <p>The following Python code performs matrix multiplication on GPU 0.</p>
+
+    <pre><code class="language-python">
+        import torch
+
+        # Check if CUDA is available and GPU 0 exists
+        if not torch.cuda.is_available():
+            raise SystemError("CUDA is not available on this system.")
+
+        device = torch.device("cuda:0")  # Use GPU 0
+
+        # Ask for matrix size
+        N = int(input("Enter the size of the square matrices (N x N): "))
+
+        # Input matrix A
+        print(f"Enter {N * N} values for Matrix A (row-major order):")
+        A_values = list(map(float, input().split()))
+        A = torch.tensor(A_values, dtype=torch.float32).reshape(N, N).to(device)
+
+        # Input matrix B
+        print(f"Enter {N * N} values for Matrix B (row-major order):")
+        B_values = list(map(float, input().split()))
+        B = torch.tensor(B_values, dtype=torch.float32).reshape(N, N).to(device)
+
+        # Matrix multiplication on GPU 0
+        C = torch.matmul(A, B)
+
+        # Move result back to CPU for display
+        C_cpu = C.cpu()
+
+        print("Result matrix C = A * B:")
+        print(C_cpu)
+
+    </code></pre>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+</body>
+</html>
