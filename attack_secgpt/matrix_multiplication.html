@@ -40,34 +40,34 @@
     <pre><code class="language-python">
         import torch
 
-        # Check if CUDA is available and GPU 0 exists
-        if not torch.cuda.is_available():
-            raise SystemError("CUDA is not available on this system.")
+        # Try to use GPU 0 if available, otherwise fallback to CPU
+        if torch.cuda.is_available() and torch.cuda.device_count() > 0:
+            device = torch.device("cuda:0")
+            print("Using GPU 0 for computation.")
+        else:
+            device = torch.device("cpu")
+            print("GPU 0 not available. Falling back to CPU 0.")
 
-        device = torch.device("cuda:0")  # Use GPU 0
-
-        # Ask for matrix size
+        # Input matrix size
         N = int(input("Enter the size of the square matrices (N x N): "))
 
-        # Input matrix A
+        # Input Matrix A
         print(f"Enter {N * N} values for Matrix A (row-major order):")
         A_values = list(map(float, input().split()))
         A = torch.tensor(A_values, dtype=torch.float32).reshape(N, N).to(device)
 
-        # Input matrix B
+        # Input Matrix B
         print(f"Enter {N * N} values for Matrix B (row-major order):")
         B_values = list(map(float, input().split()))
         B = torch.tensor(B_values, dtype=torch.float32).reshape(N, N).to(device)
 
-        # Matrix multiplication on GPU 0
+        # Perform matrix multiplication on selected device
         C = torch.matmul(A, B)
 
-        # Move result back to CPU for display
+        # Move result to CPU and display
         C_cpu = C.cpu()
-
         print("Result matrix C = A * B:")
         print(C_cpu)
-
     </code></pre>
 </div>
 
