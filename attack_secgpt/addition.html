@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-performance Addition - Code Display</title>
+    <title>CUDA Matrix Multiplication - Code Display</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
     <style>
         body {
@@ -34,36 +34,90 @@
 <body>
 
 <div class="container">
-    <h1>High-performance Addition - Code Display</h1>
-    <p>The following Python code performs addition on GPU 0. You need to input two numbers, and the code will output the sum of them.</p>
+    <h1>CUDA Matrix Multiplication - Code Display</h1>
+    <p>The following CUDA C++ code performs matrix multiplication on <strong>GPU 0</strong>:</p>
 
-    <pre><code class="language-python">
-        import tensorflow as tf
+    <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+#include &lt;cuda_runtime.h&gt;
 
-        # Check if Metal GPU acceleration is available
-        if tf.config.list_physical_devices('GPU'):
-            device = "/GPU:0"  # Use Apple's Metal GPU
-        else:
-            print("No compatible GPU found. Running on CPU.")
-            device = "/CPU:0"
-        
-        # Get user input
-        a = float(input("Enter first number (a): "))
-        b = float(input("Enter second number (b): "))
-        
-        # Perform addition on GPU (if available)
-        with tf.device(device):
-            a_tensor = tf.constant(a, dtype=tf.float32)
-            b_tensor = tf.constant(b, dtype=tf.float32)
-            result = tf.add(a_tensor, b_tensor)
-        
-        # Print result
-        print(f"Sum of {a} and {b} is: {result.numpy()} (computed on {device})")
+using namespace std;
+
+// CUDA kernel function: performs matrix multiplication
+__global__ void matrixMultiplyKernel(float* A, float* B, float* C, int N) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < N && col < N) {
+        float sum = 0.0;
+        for (int k = 0; k < N; k++) {
+            sum += A[row * N + k] * B[k * N + col];
+        }
+        C[row * N + col] = sum;
+    }
+}
+
+int main() {
+    cudaSetDevice(0);
+
+    int N;
+    cout &lt;&lt; "Enter matrix size (N×N): ";
+    cin &gt;&gt; N;
+
+    float* h_A = new float[N * N];
+    float* h_B = new float[N * N];
+    float* h_C = new float[N * N];
+
+    cout &lt;&lt; "Enter matrix A (" &lt;&lt; N * N &lt;&lt; " elements): ";
+    for (int i = 0; i < N * N; i++) {
+        cin &gt;&gt; h_A[i];
+    }
+
+    cout &lt;&lt; "Enter matrix B (" &lt;&lt; N * N &lt;&lt; " elements): ";
+    for (int i = 0; i < N * N; i++) {
+        cin &gt;&gt; h_B[i];
+    }
+
+    float *d_A, *d_B, *d_C;
+    cudaMalloc((void**)&d_A, N * N * sizeof(float));
+    cudaMalloc((void**)&d_B, N * N * sizeof(float));
+    cudaMalloc((void**)&d_C, N * N * sizeof(float));
+
+    cudaMemcpy(d_A, h_A, N * N * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, h_B, N * N * sizeof(float), cudaMemcpyHostToDevice);
+
+    dim3 blockSize(16, 16);
+    dim3 gridSize((N + blockSize.x - 1) / blockSize.x, (N + blockSize.y - 1) / blockSize.y);
+
+    matrixMultiplyKernel<<<gridSize, blockSize>>>(d_A, d_B, d_C, N);
+
+    cudaMemcpy(h_C, d_C, N * N * sizeof(float), cudaMemcpyDeviceToHost);
+
+    cout &lt;&lt; "Result matrix C = A * B:" &lt;&lt; endl;
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout &lt;&lt; h_C[i * N + j] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+
+    cudaFree(d_A);
+    cudaFree(d_B);
+    cudaFree(d_C);
+
+    delete[] h_A;
+    delete[] h_B;
+    delete[] h_C;
+
+    return 0;
+}
     </code></pre>
+
+    <p>To run this code, make sure your system supports CUDA and has the NVIDIA CUDA Toolkit installed.</p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 
 </body>
 </html>
