@@ -39,16 +39,8 @@
 
     <pre><code class="language-python">
         import torch
-
-        # Try to use GPU 0 if available, otherwise fallback to CPU
-        if torch.cuda.is_available() and torch.cuda.device_count() > 0:
-            device = torch.device("cuda:0")
-            print("Using GPU 0 for computation.")
-        else:
-            device = torch.device("cpu")
-            print("GPU 0 not available. Falling back to CPU 0.")
-
-        # Input matrix size
+        device = torch.device("cuda:0")
+        
         N = int(input("Enter the size of the square matrices (N x N): "))
 
         # Input Matrix A
