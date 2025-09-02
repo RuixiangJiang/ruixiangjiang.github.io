@@ -1,114 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruixiang Jiang</title>
-    <link rel="icon" href="icon.jpg" type="image/jpeg">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            box-sizing: border-box;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            width: 100%;
-			margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-        h1 {
-            text-align: center;
-        }
-        h2 {
-            margin-top: 20px;
-        }
-        p {
-            margin: 10px 0;
-        }
-        .contact-info, .education, .experience, .achievements, .projects, .cv-download {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Ruixiang Jiang</h1>
-        <p style="text-align: center;">Interests: Cybersecurity, Operating Systems, Software Engineering</p>
-        <div class="education">
-            <h2>Education</h2>
-            <p><strong>Undergraduate:</strong> Bachelor, Computer Science and Technology, Southern University of Science and Technology, China</p>
-            <p>Courses: Software Engineering, Computer Security, Operating Systems, Computer Networks, Compilers, Embedded Systems and Microcomputer Principle, etc.</p>
-            <p><strong>Graduate:</strong> PhD, Electrical and Computer Engineering, University of Delaware, United States</p>
-        </div>
-        <div class="experience">
-            <h2>Work Experience</h2>
-            <p><strong>Fall 2021:</strong> Entered SUSTech</p>
-            <p><strong>Fall 2022:</strong> Entered <a href="https://yinqian.org" target="_blank">Prof. Yinqian</a>'s lab in SUSTech</p>
-            <p><strong>Summer 2024:</strong> Entered <a href="https://jgarcia.ics.uci.edu" target="_blank">Prof. Joshua</a>'s lab in UCI for UCInspire</p>
-            <p><strong>Fall 2025:</strong> Entered Prof. Chengmo Yang's lab in UD</p>
-        </div>
-        <div class="publish">
-            <h2>Publish</h2>
-            <p><strong>Fall 2024:</strong> Patent on Asterinas IMA (Applying)</p>
-            <p style="margin-left: 78px;">The file is written in Chinese, shown <a href="publish/Patent on Asterinas IMA.pdf" target="_blank">here</a>.</p>
-        </div>
-        <div class="projects">
-            <h2>Projects</h2>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/images/icons/resume.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="A simple and minimalistic resume template." />
+        <meta name="author" content="Ryan Balieiro" />
+        <meta name="format-detection" content="address=no"/>
+        <title>Resume Template – Vue 3 + Bootstrap 5</title>
 
-            <p><strong>Fall 2023:</strong> Supported Firecracker virtualization for Asterinas platform</p>
-            <p style="margin-left: 78px;">Firecracker is an open-source virtualization technology developed by Amazon, tailored for the modern cloud computing landscape. At the same time, Asterinas is a secure, fast, and general-purpose OS kernel, written in Rust and providing Linux-compatible API. The purpose is to support Firecracker virtualization for the Asterinas platform.</p>
-            <p style="margin-left: 78px;"><a href="https://github.com/RuixiangJiang/2023Fall-CS321-Project" target="_blank">Github Source</a></p>
-            
-            <p><strong>Spring 2024:</strong> Implemented IMA for Asterinas TDX version</p>
-            <p style="margin-left: 78px;">Integrity measurement and attestation mechanisms play a pivotal role in ensuring the trustworthiness and security of computing systems. It explores the application of such mechanisms, focusing on the case study of Asterinas, a representative system. Through a comprehensive analysis of Asterinas, this study elucidates the intricacies of implementing and leveraging integrity measurement and attestation support. Furthermore, it discusses the challenges and advancements in this domain. The insights derived from Asterinas serve as valuable guidelines for enhancing integrity assurance in various computing environments.</p>
-            <p style="margin-left: 78px;"><a href="https://github.com/CXSJ2024/asterinas/tree/jrx" target="_blank">Github Source</a></p>
-            
-            <p><strong>Summer 2024:</strong> Built benchmarks for UNSAFE-to-FFM automatic transformation</p>
-            <p style="margin-left: 78px;">Some Java projects used UNSAFE to deal with problems relative to objects' addresses. However, OpenJDK published FFM API in Java 22, which was potentially able to replace UNSAFE. The purpose is to develop an automatic tool to do the transformation. My work was building benchmarks for such an automatic tool.</p>
-            <p style="margin-left: 78px;"><a href="https://github.com/Software-Aurora-Lab/Benchmarks-for-LLM" target="_blank">Github Source</a></p>
-            
-            <p><strong>Fall 2024:</strong> Implementing Hardware Security Module for Asterinas</p>
-            <p style="margin-left: 78px;">Implement a software-type HSM for Asterinas.</p>
-
-            <p><strong>Spring 2025:</strong> A new kind of indirect prompt injection for Large Language Model</p>
-            <p style="margin-left: 78px;">What if all of the prompts are looking nice as they gather to do some attack?</p>
-        </div>
-        <div class="achievements">
-            <h2>Achievements</h2>
-            <p>First Prize, National Olympiad in Informatics in Provinces (NOIP, China) Senior, 2016</p>
-            <p>First Prize, SUSTech Freshman Scholarship, 2021</p>
-            <p>Second Prize, SUSTech Outstanding Student Scholarship, 2022</p>
-            <p>Top Ten SUSTech Volunteer Awards, 2022</p>
-            <p>Second Prize, SUSTech Outstanding Student Scholarship, 2023</p>
-            <p>Outstanding Student Assistant, Engineering College, SUSTech, 2024</p>
-            <p>Team Champion, Engineering College Badminton Competition, SUSTech, 2024</p>
-        </div>
-        <div class="contact-info">
-            <h2>Contact</h2>
-            <p>Phone: (+86) 181 3015 3162,  (+1) 949 695 0674</p>
-            <p>Email: <a href="mailto:jiangrx2021@mail.sustech.edu.cn">jiangrx2021 at mail dot sustech dot edu dot cn</a></p>
-            <p style="margin-left: 48px;"><a href="mailto:chjrx0387@gmail.com">chjrx0387 at gmail dot com</a></p>
-            <p style="margin-left: 48px;"><a href="mailto:ruixiaj@uci.edu">ruixiaj at uci dot edu</a></p>
-            <p style="margin-left: 48px;"><a href="mailto:ruixiang@udel.edu">ruixiang at udel dot edu</a></p>
-            <p>GitHub: <a href="https://github.com/RuixiangJiang" target="_blank">github.com/RuixiangJiang</a></p>
-        </div>
-        <div class="cv-download">
-            <h2>Curriculum Vitae</h2>
-            <p><a href="Academic_CV.pdf" target="_blank">Click here to view my CV</a></p>
-        </div>
-    </div>
-</body>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Saira:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Archivo:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    </head>
+    <body style="background-color:#261841">
+        <div id="app"></div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
 </html>
