@@ -11,18 +11,6 @@
         },
 
         {
-            "name": "Español",
-            "id": "es",
-            "flagUrl": "images/flags/es.png"
-        },
-
-        {
-            "name": "Français",
-            "id": "fr",
-            "flagUrl": "images/flags/fr.png"
-        },
-
-        {
             "name": "中文",
             "id": "zh",
             "flagUrl": "images/flags/zh.png"

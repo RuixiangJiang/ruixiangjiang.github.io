@@ -1,27 +1,17 @@
 {
-    "name": "Roy Sheppard",
-    "profilePictureUrl": "images/pictures/avatar.jpg",
+    "name": "Ruixiang Jiang",
+    "profilePictureUrl": "images/pictures/avatar.png",
 
     "locales": {
         "en": {
             "credits": "Designed by <strong><a href='https://github.com/ryanbalieiro'>Ryan Balieiro</a></strong>",
-            "role": "UX Designer"
-        },
-
-        "es": {
-            "credits": "Hecho por <strong><a href='https://github.com/ryanbalieiro'>Ryan Balieiro</a></strong>",
-            "role": "Designer de UX"
-        },
-
-        "fr": {
-            "credits": "Conçu par <strong><a href='https://github.com/ryanbalieiro'>Ryan Balieiro</a></strong>",
-            "role": "Designer UX"
+            "role": "PhD student at UDel"
         },
 
         "zh": {
-            "name": "罗伊谢帕德",
+            "name": "江睿翔",
             "credits": "设计：<strong><a href='https://github.com/ryanbalieiro'>Ryan Balieiro</a></strong>",
-            "role": "用户体验设计师"
+            "role": "博士生，特拉华大学"
         }
     },
 
@@ -32,27 +22,21 @@
             "href": null,
             "locales": {
                 "en": {
-                    "value": "123 Main Street, Cupertino, CA 01234",
-                    "valueShort": "Cupertino – CA"
-                },
-                "es": {
-                    "valueShort": "California – EE.UU."
-                },
-                "fr": {
-                    "valueShort": "Californie – États-Unis"
+                    "value": "591 Collaboration Way, Newark, DE 19713",
+                    "valueShort": "Newark - DE"
                 },
                 "zh": {
-                    "valueShort": "美国加州"
+                    "valueShort": "美国特拉华州纽瓦克"
                 }
             }
         },
 
         {
             "id": "email",
-            "value": "roy.sheppard@genius.com",
-            "valueShort": "roy.sheppard@genius.com",
+            "value": "ruixiang at udel dot edu",
+            "valueShort": "ruixiang at udel dot edu",
             "faIcon": "fa-regular fa-envelope",
-            "href": "mailto:roy.sheppard@genius.com"
+            "href": "mailto:ruixiang@udel.edu"
         },
 
         {
@@ -65,10 +49,10 @@
 
         {
             "id": "github",
-            "value": "@roy.sheppard.official",
-            "valueShort": "@roy.sheppard.official",
+            "value": "@Ruixiang Jiang",
+            "valueShort": "@Ruixiang Jiang",
             "faIcon": "fa-brands fa-github",
-            "href": "https://github.com"
+            "href": "https://github.com/RuixiangJiang"
         },
 
         {
@@ -81,18 +65,18 @@
 
         {
             "id": "linkedin",
-            "value": "@roy.sheppard.official",
-            "valueShort": "@roy.sheppard.official",
+            "value": "@Ruixiang Jiang",
+            "valueShort": "@Ruixiang Jiang",
             "faIcon": "fa-brands fa-linkedin",
-            "href": "https://linkedin.com"
+            "href": "https://www.linkedin.com/in/ruixiang-jiang-9283a2320/"
         },
 
         {
             "id": "phone",
-            "value": "+1 (123) 456-7890",
-            "valueShort": "(123) 456-7890",
+            "value": "+1 949 695 0674, +1 484 283 5376, +86 181 3015 3162",
+            "valueShort": "+1 949 695 0674, +1 484 283 5376, +86 181 3015 3162",
             "faIcon": "fa-brands fa-whatsapp",
-            "href": "tel:1234567890"
+            "href": "tel:0019496950674"
         }
     ]
 }
