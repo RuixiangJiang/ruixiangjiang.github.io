@@ -6,7 +6,7 @@
             "locales": {},
             "settings": {
                 "order_items_by": "id",
-                "order_items_sort": "aesc"
+                "order_items_sort": "desc"
             },
             "items": [
                 {
@@ -40,7 +40,7 @@
 
                 {
                     "id": 1,
-                    "dateStart": {"year": 2025, "month": 8},
+                    "dateStart": {"year": 2025, "month": 7},
                     "dateEnd": {"string": "now"},
                     "img": "images/places/logo-univ-delaware.jpg",
                     "fallbackFaIcon": "fa-solid fa-laptop-code",

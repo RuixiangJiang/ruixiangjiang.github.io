@@ -15,7 +15,7 @@
                     "id": 1,
                     "locales": {
                         "en": {
-                            "description": "I am a PhD student at University of Delaware enrolled in 2025 Fall, focusing on Computer Engineering in ECE department. My research interest lies mainly in hardware security, to protect devices against side-channel attacks, advised by Prof. Chengmo Yang."
+                            "description": "I am a PhD student at University of Delaware enrolled in 2025 Fall, focusing on Computer Engineering in ECE department. My research interest lies mainly in hardware security, to protect devices against side-channel attacks, advised by <a href=\"https://www.eecis.udel.edu/~chengmo/Home.html\" target=\"_blank\">Chengmo Yang</a>."
                         },
 
                         "zh": {

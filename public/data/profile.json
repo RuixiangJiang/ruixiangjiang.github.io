@@ -19,13 +19,14 @@
         {
             "id": "address",
             "faIcon": "fa-regular fa-map",
-            "href": null,
+            "href": "https://maps.app.goo.gl/iEZZaEZBjy7eV12i9",
             "locales": {
                 "en": {
-                    "value": "591 Collaboration Way, Newark, DE 19713",
-                    "valueShort": "Newark - DE"
+                    "value": "591 Collaboration Way, Newark, DE 19713, United States",
+                    "valueShort": "Newark - DE - United States"
                 },
                 "zh": {
+                    "value": "",
                     "valueShort": "美国特拉华州纽瓦克"
                 }
             }
@@ -77,6 +78,14 @@
             "valueShort": "+1 949 695 0674, +1 484 283 5376, +86 181 3015 3162",
             "faIcon": "fa-brands fa-whatsapp",
             "href": "tel:0019496950674"
+        },
+
+        {
+            "id": "wechat",
+            "value": "chjrx0387",
+            "valueShort": "chjrx0387",
+            "faIcon": "fa-brands fa-weixin",
+            "href": ""
         }
     ]
 }
